@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      // GitHub Pages serves this file for any path that has no built page.
+      // The app routes /verify and /share/<token> client-side — neither has a
+      // file on disk — so a share or verify link that misses its page is
+      // handed back to the router here instead of ending at a dead end. It
+      // sits at the site's base path, so it works at a domain root and one
+      // level down on a project page.
+      //
+      // The path travels in the query string rather than sessionStorage: a
+      // query survives a redirect, and the app entry this lands on is the
+      // only place the router exists — at the site root the landing page
+      // renders, which has no routes to restore.
+      (function () {
+        var path = window.location.pathname;
+        var isShare = /(^|\/)share\//.test(path);
+        var isVerify = /(^|\/)verify\/?$/.test(path);
+        if (isShare || isVerify) {
+          // The site base, computed by stripping the public suffix: on a
+          // project page the path carries the repository prefix, at a domain
+          // root it does not, and the routes are the same either way.
+          //
+          // The trailing slash is added back rather than assumed: stripping
+          // the route leaves "/codeforwhat", and appending "demo/" to that
+          // produced "/codeforwhatdemo/" — a 404 on a project page, which is
+          // the exact page this file exists to rescue.
+          var base = path
+            .replace(/\/share\/.*$/, "")
+            .replace(/\/verify\/?$/, "")
+            .replace(/\/$/, "");
+          window.location.replace(
+            base + "/demo/?p=" + encodeURIComponent(path),
+          );
+        } else {
+          document.body.innerHTML =
+            '<p style="font:14px system-ui;padding:2rem">Not found — the page you opened is not part of this site.</p>';
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

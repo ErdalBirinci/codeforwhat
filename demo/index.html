@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover is what lets the page run edge-to-edge under the
+         notch. Without it every env(safe-area-inset-*) reads 0px, so the
+         layout looks correct in a desktop viewport and wrong on a notched
+         phone in landscape. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- iOS installation metadata.
+         `apple-mobile-web-app-capable` is the tag Safari reads to show
+         startup images; the unprefixed `mobile-web-app-capable` does not
+         enable them, so shipping only that one silently drops splash
+         screens. The three apple-* tags are iOS-only and harmless elsewhere. -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Sovereign Auditor" />
+    <!-- black-translucent is the only edge-to-edge choice: it removes the bar
+         and hands us the pixels, which is why the page header pads itself with
+         env(safe-area-inset-top) in index.css. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- One tag, no media queries: a manual appearance override has to change
+         this too, and a media-matched pair cannot be retargeted without
+         rewriting the attributes. useTheme() keeps it in step with both the
+         choice and the system preference. -->
+    <meta name="theme-color" content="#eef1f7" />
+
+    <link rel="icon" type="image/png" sizes="192x192" href="/codeforwhat/icon-192.png" />
+    <!-- One opaque square: iOS applies its own mask and shadow, so a
+         pre-rounded or transparent PNG composites onto black. -->
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/codeforwhat/apple-icon.png" />
+    <link rel="manifest" href="/codeforwhat/manifest.webmanifest" />
+
+    <meta
+      name="description"
+      content="Sovereign Auditor - autonomous regulatory compliance auditing against GDPR, ePrivacy, EAA, DSA, EU AI Act, NIS 2, DDG, CCPA, UK GDPR, LGPD and APAC frameworks."
+    />
+    <title>Sovereign Auditor</title>
+    <script type="module" crossorigin src="/codeforwhat/assets/rolldown-runtime-hePW80VL.js"></script>
+    <script type="module" crossorigin src="/codeforwhat/assets/main-B11lPUYK.js"></script>
+    <link rel="stylesheet" crossorigin href="/codeforwhat/assets/main-BJJu2X_l.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

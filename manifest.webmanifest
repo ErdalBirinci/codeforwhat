@@ -1,0 +1,30 @@
+{
+  "name": "Sovereign Auditor",
+  "short_name": "Auditor",
+  "description": "Autonomous regulatory compliance auditing against GDPR, ePrivacy, EAA, DSA, EU AI Act, NIS 2, DDG, CCPA, UK GDPR, LGPD and APAC frameworks.",
+  "start_url": "demo/",
+  "scope": "demo/",
+  "display": "standalone",
+  "background_color": "#f5f5f7",
+  "theme_color": "#f5f5f7",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
