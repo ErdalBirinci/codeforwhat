@@ -36,8 +36,17 @@
             base + "/demo/?p=" + encodeURIComponent(path),
           );
         } else {
-          document.body.innerHTML =
-            '<p style="font:14px system-ui;padding:2rem">Not found — the page you opened is not part of this site.</p>';
+          /*
+           * Deferred, and that is the bug this fixes: this script runs in the
+           * head, which is before the parser has created a body, so
+           * `document.body.innerHTML` here threw on null and the not-found
+           * page came out blank — a white screen with a title promising a
+           * redirect. The redirect above must stay synchronous; this must not.
+           */
+          document.addEventListener("DOMContentLoaded", function () {
+            document.body.innerHTML =
+              '<p style="font:14px system-ui;padding:2rem">Not found — the page you opened is not part of this site.</p>';
+          });
         }
       })();
     </script>
