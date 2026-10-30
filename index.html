@@ -16,11 +16,102 @@
 
     <meta
       name="description"
-      content="A regulatory audit of your website, delivered as a PDF within two hours. Where your site is served from, which privacy and accessibility laws that makes apply to it, and a hash-chained evidence ledger behind every finding. 29,99 €, all taxes included."
+      content="A regulatory audit of your website, delivered as a PDF within 24 hours. Where your site is served from, which privacy and accessibility laws that makes apply to it, and a hash-chained evidence ledger behind every finding. 29,99 €, all taxes included."
     />
     <title>Codeforwhat — Website compliance audit, 29,99 €</title>
+
+    <!--
+      The one address this site has. Written out rather than derived from
+      VITE_BASE: a canonical is a statement about where the page lives, and a
+      build that emits `canonical: /` on a project page is a canonical that
+      points at somebody else's root. Two places carry the host — this file and
+      the sitemap beside it — because a static host serves both as bytes.
+    -->
+    <link rel="canonical" href="https://erdalbirinci.github.io/codeforwhat/" />
+
+    <!--
+      Sharing is how a link to this page travels: pasted into a chat, quoted in
+      a procurement thread, forwarded to whoever signs off. Without these tags
+      every one of those previews is a bare URL and the title, while the price
+      and the ledger — the two things that make the page worth opening — stay
+      behind the click.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Codeforwhat" />
+    <meta property="og:url" content="https://erdalbirinci.github.io/codeforwhat/" />
+    <meta property="og:title" content="Website compliance audit, delivered in 24 hours" />
+    <meta
+      property="og:description"
+      content="GDPR, ePrivacy, EAA and 13 more instruments, measured on your public site and sealed in a hash-chained ledger. 29,99 €, PDF within 24 hours."
+    />
+    <meta
+      property="og:image"
+      content="https://erdalbirinci.github.io/codeforwhat/og.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="A sealed audit dossier scored 47 out of 100, beside the Codeforwhat wordmark and the price of 29,99 €."
+    />
+    <meta property="og:locale" content="en" />
+    <meta property="og:locale:alternate" content="tr_TR" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="fr_FR" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Website compliance audit, delivered in 24 hours" />
+    <meta
+      name="twitter:description"
+      content="Sixteen instruments measured on your public site, every finding sealed in a hash-chained ledger. 29,99 €, PDF within 24 hours."
+    />
+    <meta
+      name="twitter:image"
+      content="https://erdalbirinci.github.io/codeforwhat/og.png"
+    />
+
+    <!--
+      Structured data, in the two shapes a search result and a rich snippet can
+      actually use: the product with its price and availability, and the
+      organisation that sells it. The FAQ markup lives in the page's own
+      component because its copy is translated at render time — a JSON-LD block
+      that repeated the English strings would be a second copy to keep in step.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://erdalbirinci.github.io/codeforwhat/#organization",
+            "name": "Codeforwhat",
+            "url": "https://erdalbirinci.github.io/codeforwhat/",
+            "email": "erdalbirinci@gmail.com",
+            "description": "Automated regulatory audits of public websites: GDPR, ePrivacy, the European Accessibility Act and the instruments that bind a site where it is actually hosted."
+          },
+          {
+            "@type": "Product",
+            "@id": "https://erdalbirinci.github.io/codeforwhat/#product",
+            "name": "Website compliance audit",
+            "description": "A regulatory audit of a public website, delivered as a PDF within 24 hours, with a hash-chained evidence ledger behind every finding and five supporting documents.",
+            "brand": { "@id": "https://erdalbirinci.github.io/codeforwhat/#organization" },
+            "image": "https://erdalbirinci.github.io/codeforwhat/og.png",
+            "url": "https://erdalbirinci.github.io/codeforwhat/",
+            "offers": {
+              "@type": "Offer",
+              "price": "29.99",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://erdalbirinci.github.io/codeforwhat/#order",
+              "description": "One audit of one site. Price includes VAT."
+            }
+          }
+        ]
+      }
+    </script>
     <script type="module" crossorigin src="/codeforwhat/assets/rolldown-runtime-hePW80VL.js"></script>
-    <script type="module" crossorigin src="/codeforwhat/assets/main-BPsX1sq9.js"></script>
+    <script type="module" crossorigin src="/codeforwhat/assets/main-CNN2mUH4.js"></script>
     <link rel="stylesheet" crossorigin href="/codeforwhat/assets/main-DmxGLNhP.css">
   </head>
   <body>

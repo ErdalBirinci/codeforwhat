@@ -1,0 +1,8 @@
+# The sales page is meant to be found; the operator console is not. The console
+# also carries a noindex meta tag, which is what a crawler that ignores this file
+# still reads — two statements of the same intent, because they fail separately:
+# a meta tag is per page and this file is per origin.
+User-agent: *
+Disallow: /codeforwhat/MPR/
+
+Sitemap: https://erdalbirinci.github.io/codeforwhat/sitemap.xml
