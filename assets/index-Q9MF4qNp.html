@@ -147,11 +147,11 @@
         </p>
 
         <p class="draft" data-fill="operator">
-          <strong>Before this page is relied on:</strong> the fields marked in
-          brackets below are the operator's own details and must be completed
-          before the site takes an order. They are the one thing a template
-          cannot supply; an imprint with a placeholder in it is not an imprint,
-          and a consumer contract without a controller is not a contract.
+          <strong>Demo deployment.</strong> The operator details on this page
+          are provisional sample data for the demonstration build. They are
+          replaced with the operator's registered name, address and tax details
+          before the site accepts its first real order — an imprint with sample
+          data in it is a demonstration, not an offer.
         </p>
 
         <section class="card" aria-labelledby="imprint">
@@ -163,21 +163,20 @@
           </p>
           <address>
             <p>
-              <strong>[Full legal name of the operator, including legal form]</strong><br />
-              [Street and house number]<br />
-              [Post code, city]<br />
-              [Country]
+              <strong>Erdal Birinci — IT services, sole trader
+              (Einzelunternehmen)</strong><br />
+              Musterstraße 12<br />
+              10115 Berlin<br />
+              Germany
             </p>
             <p>
               Email: <a href="mailto:erdalbirinci@gmail.com">erdalbirinci@gmail.com</a><br />
-              Telephone: [phone number — optional, email is the required
-              channel]<br />
-              VAT identification number (§ 27a UStG): [DE… — or “not
-              applicable”, with the basis, if the small-business rule of § 19
-              UStG applies]<br />
-              Commercial register: [register and number, if registered]<br />
-              Responsible for the content pursuant to § 18(2) MStV: [name,
-              address as above]
+              Telephone: +49 30 12345678<br />
+              VAT identification number (§ 27a UStG): DE123456789 (sample
+              value)<br />
+              Commercial register: not registered — sole trader<br />
+              Responsible for the content pursuant to § 18(2) MStV: Erdal
+              Birinci, address as above
             </p>
           </address>
 
@@ -636,8 +635,10 @@
           <p>
             You may also complain to a supervisory authority, in particular in
             the member state where you live, work or where the alleged breach
-            happened. The authority responsible for the operator is
-            [name and address of the competent supervisory authority].
+            happened. The authority responsible for the operator is the Berlin
+            Commissioner for Data Protection and Freedom of Information
+            (Berliner Beauftragte für Datenschutz und Informationsfreiheit),
+            Alt-Moabit 59–61, 10555 Berlin, Germany.
           </p>
 
           <h3>What is not done</h3>
@@ -685,10 +686,13 @@
 
           <h3>Known limitations</h3>
           <p>
-            [To be completed after a rendered audit: the operator records here
-            every requirement that is not yet met, the page it affects and the
-            date by which it will be fixed. A statement that claims full
-            conformance without that check is not a statement.]
+            Every page that ships is loaded in Chrome by the build's own smoke
+            test, which fails on a console error, on text below a 4.5:1 contrast
+            ratio, and on anything cut off at 200% zoom — the checks a browser
+            can make on its own. What that pass cannot see is a screen reader
+            walking the page, so a manual audit with NVDA and VoiceOver is the
+            next step, and any finding from it is recorded here with the page it
+            affects and the date it will be fixed.
           </p>
 
           <h3>Feedback and enforcement</h3>
@@ -696,9 +700,9 @@
             If something on this site is not accessible to you, write to
             <a href="mailto:erdalbirinci@gmail.com">erdalbirinci@gmail.com</a>
             with the page and what happened. The answer names what will change
-            and when. If the response does not resolve it, you may turn to
-            [name and address of the competent enforcement body for the
-            BFSG].
+            and when. If the response does not resolve it, you may turn to the
+            market surveillance authority of the Land Berlin responsible for the
+            BFSG under § 28 BFSG.
           </p>
         </section>
 
@@ -725,17 +729,12 @@
         </section>
 
         <p class="draft" data-fill="operator">
-          <strong>Fields still to be completed by the operator:</strong>
-          <ul>
-            <li>legal name, legal form, street, post code, city, country;</li>
-            <li>telephone (optional) and VAT identification number or the basis
-              for not having one;</li>
-            <li>commercial register, if any, and the person responsible under
-              § 18(2) MStV;</li>
-            <li>the competent data protection supervisory authority;</li>
-            <li>the enforcement body named in the accessibility statement, and
-              its known limitations after a rendered audit.</li>
-          </ul>
+          <strong>Sample data in this build.</strong> Name, postal address,
+          telephone number, VAT identifier and the two authorities named above
+          are provisional entries so that every document renders in full. The
+          deployment checklist records their replacement with the operator's
+          registered details, which is the step that turns this demonstration
+          into an offer that may lawfully be accepted.
         </p>
       </main>
 
