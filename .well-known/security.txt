@@ -1,0 +1,10 @@
+Contact: mailto:erdalbirinci@gmail.com
+Contact: https://erdalbirinci.github.io/codeforwhat/legal/
+Expires: 2027-11-04T00:00:00.000Z
+Preferred-Languages: en, de, tr
+Canonical: https://erdalbirinci.github.io/codeforwhat/.well-known/security.txt
+Policy: https://erdalbirinci.github.io/codeforwhat/privacy/
+Acknowledgments: https://erdalbirinci.github.io/codeforwhat/accessibility/
+
+# A report about this site reaches a person, not a queue. We answer within five
+# working days and we will tell you what we did with the finding.

@@ -110,11 +110,131 @@
         ]
       }
     </script>
+
+    <style>.skip-to-main{z-index:40;color:#e9edf8;background:#12151f;border-radius:8px;padding:10px 14px;font:600 14px/1.4 system-ui,sans-serif;position:absolute;top:0;left:-9999px}.skip-to-main:focus{top:12px;left:12px}.no-script-links{color:#16192a;background:#f6f7fb;border-bottom:1px solid #e3e6ef;padding:12px 20px;font:14px/1.6 system-ui,sans-serif}.no-script-links p{color:#4a5170;margin:0 0 6px}.no-script-links ul{flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;list-style:none;display:flex}.cookie-banner{z-index:30;color:#e9edf8;background:#12151f;border:1px solid #2b3247;border-radius:14px;padding:18px 20px;font:14px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;position:fixed;inset:auto 16px 16px;box-shadow:0 18px 48px #06081073}.cookie-banner[hidden]{display:none}.cookie-banner-in{max-width:1080px;margin:0 auto}.cookie-banner h2{letter-spacing:-.01em;margin:0 0 6px;font-size:15px}.cookie-banner p{color:#b3bcd4;margin:0 0 10px}.cookie-banner a{color:#8fa6ff}.cookie-banner-actions{flex-wrap:wrap;gap:10px;margin:0 0 10px;display:flex}.cb-btn{font:inherit;cursor:pointer;color:#e9edf8;background:#1b2030;border:1px solid #3a4258;border-radius:9px;padding:9px 16px;font-weight:600}.cb-btn:hover{background:#232a3d}.cb-btn:focus-visible,.cookie-banner a:focus-visible{outline-offset:2px;outline:2px solid #8fa6ff}.cookie-banner-cats{color:#b3bcd4;border-top:1px solid #232a3d;flex-wrap:wrap;gap:8px 20px;padding-top:10px;display:flex}.cookie-banner-cats label{align-items:center;gap:8px;display:inline-flex}@media (width<=560px){.cookie-banner{padding:14px;inset:auto 8px 8px}.cb-btn{flex:45%}}@media (prefers-color-scheme:light){.cookie-banner{color:#16192a;background:#fff;border-color:#d9deeb}.cookie-banner p,.cookie-banner-cats{color:#4a5170}.cookie-banner a{color:#3f5be0}.cb-btn{color:#16192a;background:#f1f3f9;border-color:#c9d0e2}.cb-btn:hover{background:#e6eaf4}}</style>
     <script type="module" crossorigin src="/codeforwhat/assets/rolldown-runtime-hePW80VL.js"></script>
-    <script type="module" crossorigin src="/codeforwhat/assets/main-DpKSkYGx.js"></script>
+    <script type="module" crossorigin src="/codeforwhat/assets/main-CYnfFSp-.js"></script>
     <link rel="stylesheet" crossorigin href="/codeforwhat/assets/main-CEGCfMUl.css">
   </head>
   <body>
-    <div id="root"></div>
+    <a class="skip-to-main" href="#main">Skip to content</a>
+
+    <!--
+      The documents a visitor needs when the application has not loaded: a
+      crawler, a reader with scripting off, or a reader whose bundle failed.
+      The script at the foot of this file hides it the moment it runs, so a
+      browser with JavaScript never sees it twice alongside the real footer.
+    -->
+    <nav id="no-script-links" class="no-script-links" aria-label="Site documents">
+      <p>Site documents:</p>
+      <ul>
+        <li><a href="privacy/">Privacy notice</a></li>
+        <li><a href="privacy/#do-not-sell">Do Not Sell or Share My Personal Information</a></li>
+        <li><a href="cookies/">Cookie policy</a></li>
+        <li><a href="accessibility/">Accessibility statement</a></li>
+        <li><a href="legal/">Legal notice and terms</a></li>
+        <li><a href="verify/">Verify a dossier</a></li>
+      </ul>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <div id="root"></div>
+    </main>
+
+    <!--
+      Consent is asked on the served page rather than after hydration: a
+      banner that waits for a bundle is a banner that loads whatever precedes
+      it before consent exists. This site sets no non-essential storage, so the
+      honest banner is the one that says so and still offers the refusal.
+    -->
+    <section
+      class="cookie-banner"
+      id="cookie-banner"
+      aria-labelledby="cookie-banner-title"
+      aria-describedby="cookie-banner-text"
+    >
+      <div class="cookie-banner-in">
+        <h2 id="cookie-banner-title">Cookies and consent</h2>
+        <p id="cookie-banner-text">
+          This site sets no advertising or analytics cookies. It stores your
+          consent choice, your theme and your language in your browser, and
+          nothing else. You can accept, refuse, or choose per purpose — and you
+          can withdraw your consent at any time through the cookie settings
+          control in the footer. We honour the Global Privacy Control signal.
+          Read the <a href="privacy/">privacy notice</a> or the
+          <a href="cookies/">cookie policy</a>.
+        </p>
+        <div class="cookie-banner-actions">
+          <button type="button" class="cb-btn" data-consent="accept">Accept all</button>
+          <button type="button" class="cb-btn" data-consent="reject">Reject all</button>
+          <button type="button" class="cb-btn" data-consent="save">Save choices</button>
+        </div>
+        <div class="cookie-banner-cats">
+          <label><input type="checkbox" checked disabled /> Strictly necessary</label>
+          <label><input type="checkbox" data-purpose="analytics" /> Analytics</label>
+          <label><input type="checkbox" data-purpose="marketing" /> Marketing</label>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var links = document.getElementById("no-script-links");
+        if (links) links.hidden = true;
+
+        var banner = document.getElementById("cookie-banner");
+        if (!banner) return;
+        var KEY = "cfw-consent-v1";
+        var stored = null;
+        try {
+          stored = JSON.parse(localStorage.getItem(KEY) || "null");
+        } catch (error) {
+          stored = null;
+        }
+        if (stored) {
+          banner.hidden = true;
+          document.documentElement.setAttribute("data-consent", stored.choice);
+          return;
+        }
+
+        function record(choice) {
+          var purposes = {};
+          var boxes = banner.querySelectorAll("[data-purpose]");
+          for (var i = 0; i < boxes.length; i += 1)
+            purposes[boxes[i].getAttribute("data-purpose")] = boxes[i].checked;
+          var value = {
+            choice: choice,
+            purposes: purposes,
+            at: new Date().toISOString(),
+            gpc: navigator.globalPrivacyControl === true
+          };
+          try {
+            localStorage.setItem(KEY, JSON.stringify(value));
+          } catch (error) {
+            /* A browser that refuses storage still gets the banner dismissed. */
+          }
+          document.documentElement.setAttribute("data-consent", choice);
+          banner.hidden = true;
+        }
+
+        banner.addEventListener("click", function (event) {
+          var control = event.target.closest("[data-consent]");
+          if (!control) return;
+          var choice = control.getAttribute("data-consent");
+          if (choice === "save") {
+            var analytics = banner.querySelector('[data-purpose="analytics"]');
+            var marketing = banner.querySelector('[data-purpose="marketing"]');
+            choice =
+              (analytics && analytics.checked) || (marketing && marketing.checked)
+                ? "custom"
+                : "reject";
+          }
+          record(choice);
+        });
+
+        if (navigator.globalPrivacyControl === true) record("reject");
+      })();
+    </script>
+
   </body>
 </html>
