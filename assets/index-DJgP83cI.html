@@ -42,198 +42,77 @@
           --warn-bg: #241d10;
         }
       }
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         background: var(--page);
         color: var(--ink);
-        font:
-          16px/1.65 "Segoe UI",
-          system-ui,
-          -apple-system,
-          sans-serif;
+        font: 16px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
         -webkit-text-size-adjust: 100%;
       }
       .skip {
-        position: absolute;
-        left: -9999px;
-        top: 0;
-        background: var(--surface);
-        color: var(--ink);
-        padding: 10px 14px;
-        border-radius: 8px;
-        z-index: 5;
+        position: absolute; left: -9999px; top: 0;
+        background: var(--surface); color: var(--ink);
+        padding: 10px 14px; border-radius: 8px; z-index: 5;
       }
-      .skip:focus {
-        left: 12px;
-        top: 12px;
-      }
-      .wrap {
-        max-width: 820px;
-        margin: 0 auto;
-        padding: 32px 22px 72px;
-      }
-      a {
-        color: var(--accent);
-      }
-      a:focus-visible,
-      button:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 2px;
-        border-radius: 4px;
+      .skip:focus { left: 12px; top: 12px; }
+      .wrap { max-width: 820px; margin: 0 auto; padding: 32px 22px 72px; }
+      a { color: var(--accent); }
+      a:focus-visible, button:focus-visible {
+        outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px;
       }
       header.top {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        align-items: baseline;
-        justify-content: space-between;
-        padding-bottom: 18px;
-        border-bottom: 1px solid var(--line);
+        display: flex; flex-wrap: wrap; gap: 14px;
+        align-items: baseline; justify-content: space-between;
+        padding-bottom: 18px; border-bottom: 1px solid var(--line);
       }
-      .mark {
-        font-weight: 700;
-        letter-spacing: -0.02em;
-        font-size: 18px;
-      }
-      .mark a {
-        color: var(--ink);
-        text-decoration: none;
-      }
-      nav.jump {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        font-size: 14px;
-      }
-      h1 {
-        font-size: 30px;
-        letter-spacing: -0.03em;
-        margin: 34px 0 8px;
-      }
+      .mark { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
+      .mark a { color: var(--ink); text-decoration: none; }
+      nav.jump { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; }
+      h1 { font-size: 30px; letter-spacing: -0.03em; margin: 34px 0 8px; }
       h2 {
-        font-size: 21px;
-        letter-spacing: -0.02em;
-        margin: 44px 0 10px;
-        padding-top: 22px;
-        border-top: 1px solid var(--line);
+        font-size: 21px; letter-spacing: -0.02em;
+        margin: 44px 0 10px; padding-top: 22px; border-top: 1px solid var(--line);
       }
-      h3 {
-        font-size: 16px;
-        margin: 22px 0 6px;
-      }
-      p,
-      li,
-      td,
-      th {
-        color: var(--ink-2);
-      }
-      p {
-        margin: 10px 0;
-      }
-      ul,
-      ol {
-        padding-left: 22px;
-      }
-      li {
-        margin: 4px 0;
-      }
+      h3 { font-size: 16px; margin: 22px 0 6px; }
+      p, li, td, th { color: var(--ink-2); }
+      p { margin: 10px 0; }
+      ul, ol { padding-left: 22px; }
+      li { margin: 4px 0; }
       code {
-        font:
-          13.5px/1.5 ui-monospace,
-          "Cascadia Mono",
-          Consolas,
-          monospace;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 6px;
-        padding: 1px 5px;
+        font: 13.5px/1.5 ui-monospace, "Cascadia Mono", Consolas, monospace;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: 6px; padding: 1px 5px;
       }
       .draft {
-        margin: 26px 0 0;
-        padding: 14px 16px;
-        border-radius: 12px;
-        background: var(--warn-bg);
-        border: 1px solid var(--line);
-        font-size: 14px;
-        color: var(--warn);
+        margin: 26px 0 0; padding: 14px 16px; border-radius: 12px;
+        background: var(--warn-bg); border: 1px solid var(--line);
+        font-size: 14px; color: var(--warn);
       }
-      .draft b,
-      .draft strong {
-        color: var(--warn);
-      }
-      .draft ul {
-        margin: 8px 0 0;
-      }
+      .draft b, .draft strong { color: var(--warn); }
+      .draft ul { margin: 8px 0 0; }
       section.card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 16px;
-        padding: 4px 22px 20px;
-        margin-top: 18px;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: 16px; padding: 4px 22px 20px; margin-top: 18px;
       }
-      address {
-        font-style: normal;
-      }
-      .role {
-        font-size: 13.5px;
-        color: var(--ink-3);
-        margin-top: -4px;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 12px 0;
-        font-size: 14.5px;
-      }
-      caption {
-        text-align: left;
-        font-size: 13.5px;
-        color: var(--ink-3);
-        padding-bottom: 6px;
-      }
-      th,
-      td {
-        text-align: left;
-        vertical-align: top;
-        padding: 8px 10px 8px 0;
-        border-bottom: 1px solid var(--line);
-      }
-      th {
-        font-weight: 600;
-        color: var(--ink);
-        width: 34%;
-      }
-      .langs {
-        display: flex;
-        gap: 10px;
-        font-size: 14px;
-      }
+      address { font-style: normal; }
+      .role { font-size: 13.5px; color: var(--ink-3); margin-top: -4px; }
+      table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14.5px; }
+      caption { text-align: left; font-size: 13.5px; color: var(--ink-3); padding-bottom: 6px; }
+      th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--line); }
+      th { font-weight: 600; color: var(--ink); width: 34%; }
+      .langs { display: flex; gap: 10px; font-size: 14px; }
       footer.foot {
-        margin-top: 44px;
-        padding-top: 18px;
-        border-top: 1px solid var(--line);
-        font-size: 13.5px;
-        color: var(--ink-3);
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        justify-content: space-between;
+        margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--line);
+        font-size: 13.5px; color: var(--ink-3);
+        display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
       }
       @media (prefers-reduced-motion: no-preference) {
-        html {
-          scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
       }
       @media (max-width: 520px) {
-        th {
-          width: 42%;
-        }
-        table {
-          font-size: 13.5px;
-        }
+        th { width: 42%; }
+        table { font-size: 13.5px; }
       }
     </style>
   </head>
@@ -282,18 +161,14 @@
           </p>
           <address>
             <p>
-              <strong
-                >Erdal Birinci — IT services, sole trader
-                (Einzelunternehmen)</strong
-              ><br />
+              <strong>Erdal Birinci — IT services, sole trader
+              (Einzelunternehmen)</strong><br />
               Musterstraße 12<br />
               10115 Berlin<br />
               Germany
             </p>
             <p>
-              Email:
-              <a href="mailto:erdalbirinci@gmail.com">erdalbirinci@gmail.com</a
-              ><br />
+              Email: <a href="mailto:erdalbirinci@gmail.com">erdalbirinci@gmail.com</a><br />
               Telephone: +49 30 12345678<br />
               VAT identification number (§ 27a UStG): DE123456789 (sample
               value)<br />
@@ -323,9 +198,7 @@
             It is repeated here in full so that it is not only in the checkout.
           </p>
           <table>
-            <caption>
-              Pre-contractual information for consumers
-            </caption>
+            <caption>Pre-contractual information for consumers</caption>
             <tbody>
               <tr>
                 <th scope="row">Service</th>
@@ -365,16 +238,16 @@
                 <th scope="row">Delivery</th>
                 <td>
                   The dossier is emailed within 24 hours of the payment being
-                  confirmed. If the target cannot be reached, the audit is
-                  re-run or the payment refunded.
+                  confirmed. If the target cannot be reached, the audit is re-run
+                  or the payment refunded.
                 </td>
               </tr>
               <tr>
                 <th scope="row">Contract duration</th>
                 <td>
                   One-off audits end with delivery. Monthly plans run until
-                  cancelled and may be cancelled at any time with effect from
-                  the end of the current billing month; no minimum term applies.
+                  cancelled and may be cancelled at any time with effect from the
+                  end of the current billing month; no minimum term applies.
                 </td>
               </tr>
               <tr>
@@ -382,9 +255,8 @@
                 <td>
                   Consumers have fourteen days. Because the audit starts
                   immediately, the checkout asks you to agree to that start and
-                  to acknowledge that the right of withdrawal ends once the
-                  audit has been fully performed. See
-                  <a href="#withdrawal">Withdrawal</a>.
+                  to acknowledge that the right of withdrawal ends once the audit
+                  has been fully performed. See <a href="#withdrawal">Withdrawal</a>.
                 </td>
               </tr>
               <tr>
@@ -434,7 +306,8 @@
             labelled with the payment obligation, after confirming the email
             address with the code sent to it and ticking the required boxes. The
             contract is concluded when the payment is confirmed and the order
-            confirmation is sent. No order is accepted before that confirmation.
+            confirmation is sent. No order is accepted before that
+            confirmation.
           </p>
 
           <h3>3. Price and payment</h3>
@@ -451,8 +324,8 @@
           <p>
             The audit begins once the payment is confirmed. The dossier is
             delivered to the address given at checkout within 24 hours. If the
-            target cannot be reached, or the crawl is refused, the operator says
-            so and either re-runs the audit or refunds the price.
+            target cannot be reached, or the crawl is refused, the operator
+            says so and either re-runs the audit or refunds the price.
           </p>
 
           <h3>5. Recurring plans and cancellation</h3>
@@ -496,8 +369,8 @@
           <h3>9. Use of the dossier</h3>
           <p>
             The buyer may use the dossier within their own organisation and may
-            pass it to their clients, auditors and advisers. The agency plan
-            does not permit reselling the audit itself as a service under the
+            pass it to their clients, auditors and advisers. The agency plan does
+            not permit reselling the audit itself as a service under the
             operator's name, or presenting the engine as the buyer's own. The
             operator keeps the right to describe the audit method and to publish
             anonymised, aggregated results.
@@ -525,10 +398,10 @@
           <h3>12. Availability and changes</h3>
           <p>
             The operator may change the audit's scope where a legal or technical
-            reason requires it, and will say so before the next order or the
-            next billing month of a recurring plan. A change that materially
-            reduces what a running plan delivers entitles the buyer to cancel it
-            with effect from the change.
+            reason requires it, and will say so before the next order or the next
+            billing month of a recurring plan. A change that materially reduces
+            what a running plan delivers entitles the buyer to cancel it with
+            effect from the change.
           </p>
 
           <h3>13. Applicable law</h3>
@@ -566,8 +439,8 @@
             withdrawal ends when the operator has fully performed — the audit
             has run and the dossier has been delivered — and you expressly
             agreed before performance began that it should begin, and
-            acknowledged that full performance ends your right of withdrawal. §
-            356(5) BGB. The checkout asks for exactly that agreement, in a box
+            acknowledged that full performance ends your right of withdrawal.
+            § 356(5) BGB. The checkout asks for exactly that agreement, in a box
             of its own, before payment; the time it was given is recorded with
             the order.
           </p>
@@ -592,9 +465,9 @@
 
           <h3>Model withdrawal form</h3>
           <p>
-            “To [operator name and address, as in the imprint]: I hereby
-            withdraw from the contract for the purchase of the following service
-            — website compliance audit of [domain] — ordered on [date]. Name,
+            “To [operator name and address, as in the imprint]: I hereby withdraw
+            from the contract for the purchase of the following service —
+            website compliance audit of [domain] — ordered on [date]. Name,
             address, email used for the order, date.”
           </p>
         </section>
@@ -618,9 +491,7 @@
 
           <h3>What is processed and why</h3>
           <table>
-            <caption>
-              Purposes, data and legal bases
-            </caption>
+            <caption>Purposes, data and legal bases</caption>
             <tbody>
               <tr>
                 <th scope="row">Taking and performing the order</th>
@@ -660,8 +531,8 @@
               <tr>
                 <th scope="row">News and offers</th>
                 <td>
-                  The email address, only if the optional box was ticked. Art.
-                  6(1)(a) GDPR (consent). Unticked means nothing is sent.
+                  The email address, only if the optional box was ticked.
+                  Art. 6(1)(a) GDPR (consent). Unticked means nothing is sent.
                 </td>
               </tr>
               <tr>
@@ -691,8 +562,8 @@
             consent banner as rendered, plus a screenshot of the pages that were
             fetched. No form is submitted, no account is created, no field is
             typed into. Personal data that appears on the audited page (names,
-            addresses, telephone numbers, labelled identifiers) is blurred out
-            of the captures before the image bytes are stored.
+            addresses, telephone numbers, labelled identifiers) is blurred out of
+            the captures before the image bytes are stored.
           </p>
 
           <h3>Who receives it</h3>
@@ -706,8 +577,8 @@
               order confirmation and the dossier.
             </li>
             <li>
-              <strong>GitHub, Inc. (GitHub Pages) and Cloudflare, Inc.</strong>
-              — serving this static page and its assets.
+              <strong>GitHub, Inc. (GitHub Pages) and Cloudflare, Inc.</strong> —
+              serving this static page and its assets.
             </li>
             <li>
               <strong>Fly.io, Inc.</strong> — hosting the audit engine and the
@@ -716,8 +587,8 @@
           </ul>
           <p>
             Each of them processes on the operator's instructions and only for
-            the purpose above. Data is not sold, and is not passed to
-            advertisers or data brokers.
+            the purpose above. Data is not sold, and is not passed to advertisers
+            or data brokers.
           </p>
 
           <h3>Transfers outside the European Economic Area</h3>
@@ -725,8 +596,8 @@
             The providers above are established in the United States or process
             data there. Transfers rely on the European Commission's Standard
             Contractual Clauses (Art. 46(2)(c) GDPR) and, where the provider is
-            certified, on the EU–US Data Privacy Framework (Art. 45 GDPR). A
-            copy of the safeguards can be requested at the address above.
+            certified, on the EU–US Data Privacy Framework (Art. 45 GDPR). A copy
+            of the safeguards can be requested at the address above.
           </p>
 
           <h3>How long it is kept</h3>
@@ -741,8 +612,8 @@
             </li>
             <li>
               The verification code: fifteen minutes, and it is never stored
-              server-side at all — it exists only in the sealed envelope the
-              page carries.
+              server-side at all — it exists only in the sealed envelope the page
+              carries.
             </li>
             <li>
               Aggregate page counters: as counts, without any identifier, for as
@@ -753,9 +624,9 @@
           <h3>Your rights</h3>
           <p>
             You may request access to your data, rectification, erasure,
-            restriction of processing and data portability, and you may object
-            to processing based on legitimate interest. Consent can be withdrawn
-            at any time with effect for the future — for news and offers, by the
+            restriction of processing and data portability, and you may object to
+            processing based on legitimate interest. Consent can be withdrawn at
+            any time with effect for the future — for news and offers, by the
             link in every message or by an email to the address above. These
             rights are free of charge. Requests are answered within one month.
           </p>
@@ -783,12 +654,12 @@
             This site sets no cookie and loads nothing from a third party — the
             fonts, scripts and images are served from the same origin, which is
             also why there is no consent banner. Two entries are written to your
-            browser's local storage and are strictly necessary for a function
-            you asked for: the language you picked and the light or dark theme.
-            They stay until you clear your browser's storage, and they are never
-            sent anywhere. The operator console — a separate page, not linked
-            from this site — keeps a session marker in session storage; nothing
-            on the sales page does.
+            browser's local storage and are strictly necessary for a function you
+            asked for: the language you picked and the light or dark theme. They
+            stay until you clear your browser's storage, and they are never sent
+            anywhere. The operator console — a separate page, not linked from
+            this site — keeps a session marker in session storage; nothing on the
+            sales page does.
           </p>
         </section>
 
@@ -838,20 +709,19 @@
           <p>
             Complaints about an order, an invoice or this site go to
             <a href="mailto:erdalbirinci@gmail.com">erdalbirinci@gmail.com</a>
-            and are answered within five working days. Please include the domain
-            that was audited and the email address used for the order.
+            and are answered within five working days. Please include the
+            domain that was audited and the email address used for the order.
           </p>
           <p>
             The operator is neither obliged nor willing to take part in dispute
-            resolution proceedings before a consumer arbitration board within
-            the meaning of § 36 of the German Consumer Dispute Resolution Act
-            (VSBG).
+            resolution proceedings before a consumer arbitration board within the
+            meaning of § 36 of the German Consumer Dispute Resolution Act (VSBG).
           </p>
           <p>
             The European Commission's Online Dispute Resolution platform was
             discontinued on 20 July 2025 and no longer accepts complaints; this
-            page therefore links to it no longer. Consumers in the European
-            Union may use the European Consumer Centre network, and consumers in
+            page therefore links to it no longer. Consumers in the European Union
+            may use the European Consumer Centre network, and consumers in
             Germany may contact the Zentrum für Europäischen Verbraucherschutz.
           </p>
         </section>
