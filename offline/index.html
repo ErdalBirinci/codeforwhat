@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#eef1f7" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/codeforwhat/icon-192.png" />
+    <meta
+      name="description"
+      content="Check a Todiste dossier in this browser: the hash chain, the record digest and the seal are recomputed from the file you hold, with no server and no upload."
+    />
+    <title>Verify a dossier offline — Todiste</title>
+    <style>:root{--lightningcss-light:initial;--lightningcss-dark: ;color-scheme:light dark;--bg:#eef1f7;--panel:#fff;--ink:#12151f;--ink-2:#3d4457;--ink-3:#6a7288;--line:#d5dae6;--pass:#1d7a4c;--fail:#a32a2a;--warn:#8a5a00}@media (prefers-color-scheme:dark){:root{--lightningcss-light: ;--lightningcss-dark:initial;--bg:#0f121a;--panel:#171b26;--ink:#e9edf8;--ink-2:#c2c9db;--ink-3:#8e97ad;--line:#2a3142;--pass:#5fd39a;--fail:#ff8f8f;--warn:#e8c06a}}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}main{max-width:780px;margin:0 auto;padding:48px 20px 72px}h1{letter-spacing:-.02em;margin:0 0 12px;font-size:30px;line-height:1.15}p.lead{color:var(--ink-2);max-width:62ch;margin:0 0 24px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.drop{border:1.5px dashed var(--line);text-align:center;color:var(--ink-2);border-radius:12px;padding:28px 18px}.drop.dragging{border-color:var(--pass)}label{letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);margin:18px 0 6px;font-size:12px;font-weight:600;display:block}input[type=file]{width:100%}input[type=password],input[type=text]{border:1px solid var(--line);background:var(--bg);width:100%;color:var(--ink);font:inherit;border-radius:9px;padding:10px 12px}button{background:var(--ink);color:var(--panel);cursor:pointer;border:0;border-radius:10px;margin-top:16px;padding:11px 18px;font:600 14px/1 inherit}button:disabled{opacity:.5;cursor:default}.verdict{margin-top:20px;font-weight:600}.verdict.pass{color:var(--pass)}.verdict.fail{color:var(--fail)}.verdict.warn{color:var(--warn)}dl{grid-template-columns:190px 1fr;gap:8px 16px;margin:18px 0 0;display:grid}dt{color:var(--ink-3);font-size:13px}dd{overflow-wrap:anywhere;margin:0}ul.problems{color:var(--fail);margin:16px 0 0;padding-left:20px}.note{color:var(--ink-3);margin-top:22px;font-size:12.5px}code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}a{color:inherit}</style>
+    <script type="module" crossorigin src="/codeforwhat/assets/offline-BUCpo63x.js"></script>
+    <link rel="modulepreload" crossorigin href="/codeforwhat/assets/modulepreload-polyfill-P2Xu9kJm.js">
+  </head>
+  <body>
+    <main>
+      <h1>Verify a dossier in this browser</h1>
+      <p class="lead">
+        Choose the dossier JSON, or the stored audit file, that you were sent.
+        The hash chain, the record digest and the HMAC seal are recomputed here,
+        on this device. Nothing is uploaded and no server is contacted.
+      </p>
+
+      <section class="panel" aria-labelledby="form-heading">
+        <h2 id="form-heading" style="margin: 0; font-size: 15px">The file</h2>
+        <div class="drop" id="drop">
+          Drop the dossier here, or choose it below. A PDF alone cannot be
+          checked — its JSON is exported beside it for exactly this reason.
+        </div>
+        <label for="file">Dossier JSON</label>
+        <input id="file" type="file" accept="application/json,.json" />
+
+        <label for="key">Operator key (optional)</label>
+        <input
+          id="key"
+          type="password"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Only if the seal must be checked under the key that made it"
+        />
+        <p class="note" style="margin-top: 8px">
+          Without the key the chain and the record digest are still verified;
+          the HMAC is reported as unchecked rather than valid.
+        </p>
+
+        <button id="run" type="button" disabled>Verify</button>
+      </section>
+
+      <section id="result" hidden aria-live="polite">
+        <p class="verdict" id="verdict"></p>
+        <dl id="facts"></dl>
+        <ul class="problems" id="problems"></ul>
+        <p class="note" id="anchor"></p>
+      </section>
+
+      <p class="note">
+        The same check from a terminal:
+        <code>npm run verify -- dossier.json --key ./data/operator.key</code>.
+        The seal is an HMAC-SHA-256 under the operator's key; the chain is
+        <code>chain<sub>n</sub> = SHA-256(chain<sub>n-1</sub> | digest<sub>n</sub>)</code>.
+      </p>
+    </main>
+  </body>
+</html>
